@@ -10,13 +10,13 @@ https://spring.io/blog/2024/10/28/restclient-support-for-oauth2-in-spring-securi
 
 O projeto consiste em três componentes principais:
 
-1. **Authorization Server** (Port 9000) - Handles authentication and issues OAuth2 tokens
-2. **Resource Server** (Port 8082) - Provides protected golf lesson endpoints
+1. **Authorization Server** (Port 9000) - Lida com autenticação e emite tokens OAuth2
+2. **Resource Server** (Port 8082) - Provê os endpoints da aplicação
 3. **Client Applications**:
-    - OAuth2 Client (Spring Security implementation)
-    - No-Auth Client (RestClient without Authorization)
+    - OAuth2 Client (Implementação com Spring Security)
+    - No-Auth Client (RestClient sem autorização)
 
-## Architecture
+## Arquitetura
 
 ```mermaid
 graph TD
@@ -27,33 +27,33 @@ graph TD
     C -->|Returns Protected Resources| A
 ```
 
-## Project Requirements
+## Requerimentos do Projeto
 
 - Java 23
 - Spring Boot 3.3.5+
 - Maven 3.6+
 - Spring Security 6.4+
 
-## Key Features
+## Características chave
 
-- OAuth2 Authorization Server implementation
-- JWT token-based authentication
-- Resource server with protected endpoints
-- Client credential flow implementation
-- RestClient with OAuth2 support
+- Implementação do servidor de autorização OAuth2
+- Autenticação baseada em token JWT
+- Servidor de recursos com endpoints protegidos
+- Implementação do fluxo de credenciais do cliente
+- RestClient com suporte OAuth2
 
-## Getting Started
+## Executando a aplicação
 
-### Setting Up the Authorization Server
+### Configurando o Authorization Server
 
-1. Start the authorization server:
+1. Inicie o authorization server:
 
 ```bash
 cd authorization-server
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
-The server will start on port 9000 with the following configuration:
+O servidor iniciará na porta 9000 com a seguinte configuração:
 
 ```yaml
 spring:
@@ -63,16 +63,16 @@ spring:
         issuer: http://localhost:9000
 ```
 
-### Setting Up the Resource Server
+### Configurando o Resource Server
 
-1. Start the resource server:
+1. Inicie o resource server:
 
 ```bash
 cd resource-server
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
-The resource server runs on port 8082 and is configured to validate tokens with the authorization server:
+O resource server é executado na porta 8082 e está configurado para validar tokens com o servidor de autorização:
 
 ```yaml
 spring:
@@ -83,7 +83,7 @@ spring:
           issuer-uri: http://localhost:9000
 ```
 
-### Client Applications
+### Aplicações Cliente
 
 #### OAuth2 Client Application
 
@@ -102,9 +102,9 @@ spring:
             scope: read
 ```
 
-#### Using the REST API
+#### Usando a REST API
 
-To access protected resources:
+Para acessar recursos protegidos:
 
 ```java
 @RestController
@@ -122,11 +122,11 @@ public class LessonsController {
 }
 ```
 
-## Security Configuration
+## Configuração de segurança
 
 ### Authorization Server
 
-The authorization server is configured with in-memory client registration:
+O servidor de autorização está configurado com registro de cliente na memória:
 
 ```java
 @Bean
@@ -144,7 +144,7 @@ public RegisteredClientRepository registeredClientRepository() {
 
 ### Resource Server
 
-The resource server is configured to require authentication for all requests:
+O resource server está configurado para exigir autenticação para todas as solicitações:
 
 ```java
 @Configuration
@@ -168,9 +168,9 @@ public class ResourceServerConfig {
 
 ### Lessons API
 
-`GET /lessons` - Retrieves available golf lessons
+`GET /lessons` - Recupera registros disponíveis
 
-Example response:
+Examplo de response:
 ```json
 [
   {
@@ -182,9 +182,9 @@ Example response:
 ]
 ```
 
-## Testing
+## Testando
 
-The project includes JUnit tests for each component. Run tests using:
+O projeto inclui testes JUnit para cada componente. Execute testes usando:
 
 ```bash
 mvn test
@@ -192,7 +192,7 @@ mvn test
 
 ## Error Handling
 
-The client applications include comprehensive error handling for OAuth2-related issues:
+Os aplicativos cliente incluem tratamento abrangente de erros para problemas relacionados ao OAuth2:
 
 ```java
 .defaultStatusHandler(HttpStatusCode::is4xxClientError, (request, response) -> {
@@ -204,10 +204,10 @@ The client applications include comprehensive error handling for OAuth2-related 
         "Client error occurred");
 })
 ```
-## Youtube Video tutorial
+## Youtube Video tutorial (original)
 
 https://www.youtube.com/watch?v=nFKcJDpUuZ8
 
-## Repo Github
+## Repo Github (original)
 
 https://github.com/danvega/golf-scheduler?tab=readme-ov-file
