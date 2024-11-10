@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.wrtecnologia</groupId>
-	<artifactId>client-application</artifactId>
+	<artifactId>client-auth-application</artifactId>
 	<version>1.1</version>
-	<name>client-application</name>
-	<description>client-application</description>
+	<name>client-auth-application</name>
+	<description>client-auth-application</description>
 	<url/>
 	<licenses>
 		<license/>

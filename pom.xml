@@ -12,8 +12,8 @@
     <modules>
         <module>authorization-server</module>
         <module>resource-server</module>
-        <module>client-application</module>
-        <module>noauth-client</module>
+        <module>client-auth-application</module>
+        <module>client-noauth-application</module>
     </modules>
 
     <properties>

@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.wrtecnologia</groupId>
-    <artifactId>noauth-client</artifactId>
+    <artifactId>client-noauth-application</artifactId>
     <version>1.1</version>
-    <name>noauth-client</name>
-    <description>noauth-client</description>
+    <name>client-noauth-application</name>
+    <description>client-noauth-application</description>
     <url/>
     <licenses>
         <license/>
