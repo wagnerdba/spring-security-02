@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="client-application" />
         <module name="resource-server" />
+        <module name="client-application" />
+        <module name="noauth-client" />
         <module name="authorization-server" />
       </profile>
     </annotationProcessing>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="authorization-server" options="-parameters" />
       <module name="client-application" options="-parameters" />
+      <module name="noauth-client" options="-parameters" />
       <module name="resource-server" options="-parameters" />
     </option>
   </component>

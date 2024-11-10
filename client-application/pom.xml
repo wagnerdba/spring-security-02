@@ -8,9 +8,9 @@
 		<version>3.4.0-RC1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.golfacademy</groupId>
+	<groupId>com.wrtecnologia</groupId>
 	<artifactId>client-application</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.1</version>
 	<name>client-application</name>
 	<description>client-application</description>
 	<url/>
