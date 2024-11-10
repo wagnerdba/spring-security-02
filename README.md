@@ -1,8 +1,8 @@
-# Golf Academy OAuth2 Implementation
+# OAuth2 com Spring Boot 3.3+ 
 
-A robust OAuth2 implementation for the Golf Academy application using Spring Boot 3.3+. This project demonstrates a complete OAuth2 setup with an authorization server, resource server, and client applications.
+Uma implementação OAuth2 robusta usando Spring Boot 3.3+. Este projeto demonstra uma configuração completa do OAuth2 com um servidor de autorização, servidor de recursos e aplicativos cliente.
 
-In particular this application is showing off the new RestClient support for OAuth2 in Spring Security 6.4. 
+Em particular, este aplicativo está exibindo o novo suporte RestClient para OAuth2 no Spring Security 6.4.
 
 https://spring.io/blog/2024/10/28/restclient-support-for-oauth2-in-spring-security-6-4
 
