@@ -6,9 +6,9 @@ Em particular, este aplicativo está exibindo o novo suporte RestClient para OAu
 
 https://spring.io/blog/2024/10/28/restclient-support-for-oauth2-in-spring-security-6-4
 
-## Project Overview
+## Visão Geral do Projeto
 
-The project consists of three main components:
+O projeto consiste em três componentes principais:
 
 1. **Authorization Server** (Port 9000) - Handles authentication and issues OAuth2 tokens
 2. **Resource Server** (Port 8082) - Provides protected golf lesson endpoints
