@@ -1,4 +1,4 @@
-package com.wrtecnologia.clientnoauthapplication;
+package com.wrtecnologia.clientauthapplication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

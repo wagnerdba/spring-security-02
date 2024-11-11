@@ -1,6 +1,6 @@
-package com.wrtecnologia.clientnoauthapplication.controller;
+package com.wrtecnologia.clientauthapplication.controller;
 
-import com.wrtecnologia.clientapplication.dto.TokenResponse;
+import com.wrtecnologia.clientauthapplication.dto.TokenResponse;
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;

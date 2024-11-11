@@ -1,4 +1,4 @@
-package com.wrtecnologia.clientapplication.config;
+package com.wrtecnologia.clientauthapplication.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

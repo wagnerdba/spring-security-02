@@ -1,4 +1,4 @@
-package com.wrtecnologia.clientapplication.dto;
+package com.wrtecnologia.clientauthapplication.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
