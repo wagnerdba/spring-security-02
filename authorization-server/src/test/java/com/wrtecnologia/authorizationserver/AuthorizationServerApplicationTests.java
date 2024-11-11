@@ -1,4 +1,4 @@
-package com.wrtecnologia.authserver;
+package com.wrtecnologia.authorizationserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

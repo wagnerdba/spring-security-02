@@ -1,4 +1,4 @@
-package com.wrtecnologia.authserver.config;
+package com.wrtecnologia.authorizationserver.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

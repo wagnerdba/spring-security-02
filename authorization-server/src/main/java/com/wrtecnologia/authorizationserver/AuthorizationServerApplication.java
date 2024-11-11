@@ -1,4 +1,4 @@
-package com.wrtecnologia.authserver;
+package com.wrtecnologia.authorizationserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
