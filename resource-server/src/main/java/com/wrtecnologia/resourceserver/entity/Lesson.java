@@ -1,12 +1,13 @@
 package com.wrtecnologia.resourceserver.entity;
 
-import lombok.Data;
-
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Data
+// @Data
 // @AllArgsConstructor - Desabilitado por incompatibilidade (não funcional)
-public class Lesson {
+public class Lesson implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String title;
     private String description;
     private String instructor;
@@ -16,6 +17,38 @@ public class Lesson {
         this.title = title;
         this.description = description;
         this.instructor = instructor;
+        this.schedule = schedule;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
+    }
+
+    public LocalDateTime getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(LocalDateTime schedule) {
         this.schedule = schedule;
     }
 }
