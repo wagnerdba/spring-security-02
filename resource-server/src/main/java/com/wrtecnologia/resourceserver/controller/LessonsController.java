@@ -1,6 +1,6 @@
 package com.wrtecnologia.resourceserver.controller;
 
-import com.wrtecnologia.resourceserver.Lesson;
+import com.wrtecnologia.resourceserver.entity.Lesson;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

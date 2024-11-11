@@ -1,11 +1,12 @@
 package com.wrtecnologia.clientapplication.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.Instant;
 
 @Data
-// @AllArgsConstructor - Desabilitado por incompatibilidade (não funcional)
+// @AllArgsConstructor //- Desabilitado por incompatibilidade (não funcional)
 public class TokenResponse {
 
     private String accessToken;
@@ -26,6 +27,5 @@ public class TokenResponse {
         this.tokenType = tokenType;
         this.clientId = clientId;
         this.clientSecret = clientSecret;
-    }
-
+     }
 }
