@@ -1,4 +1,4 @@
-package com.wrtecnologia.noauthclient.controller;
+package com.wrtecnologia.clientnoauthapplication.controller;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

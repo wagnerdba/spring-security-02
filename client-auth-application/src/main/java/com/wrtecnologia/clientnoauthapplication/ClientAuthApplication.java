@@ -1,13 +1,14 @@
-package com.wrtecnologia.noauthclient;
+package com.wrtecnologia.clientnoauthapplication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ClientNoAuthApplication {
+public class ClientAuthApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ClientNoAuthApplication.class, args);
+        SpringApplication.run(ClientAuthApplication.class, args);
     }
 
 }
+

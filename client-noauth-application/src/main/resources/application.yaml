@@ -1,5 +1,5 @@
 spring:
   application:
-    name: noauth-client
+    name: client-noauth-application
 server:
   port: 8085

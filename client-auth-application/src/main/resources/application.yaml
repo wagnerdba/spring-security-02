@@ -1,6 +1,6 @@
 spring:
   application:
-    name: client-application
+    name: client-auth-application
   security:
     oauth2:
       client:
