@@ -1,4 +1,4 @@
-package com.wrtecnologia.clientapplication.controller;
+package com.wrtecnologia.clientauthapplication.controller;
 
 import com.wrtecnologia.clientapplication.dto.TokenResponse;
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
