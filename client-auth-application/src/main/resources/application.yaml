@@ -13,4 +13,4 @@ spring:
             scope: read
         provider:
           golf-provider:
-            token-uri: http://localhost:9000/oauth2/token
+            token-uri: http://authorization-server:9000/oauth2/token

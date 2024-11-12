@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  authorization-server:
+    build:
+      context: ./authorization-server
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    environment:
+      - JAVA_OPTS=-Xmx512m
+    command: sh -c "java -jar authorization-server.jar & exec sh"
+    networks:
+      - spring-network
+    tty: true
+    stdin_open: true
+
+  resource-server:
+    build:
+      context: ./resource-server
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    environment:
+      - JAVA_OPTS=-Xmx512m
+    command: sh -c "java -jar resource-server.jar & exec sh"
+    networks:
+      - spring-network
+    tty: true
+    stdin_open: true
+
+  client-auth-application:
+    build:
+      context: ./client-auth-application
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - JAVA_OPTS=-Xmx512m
+    command: sh -c "java -jar client-auth-application.jar & exec sh"
+    networks:
+      - spring-network
+    tty: true
+    stdin_open: true
+
+  client-noauth-application:
+    build:
+      context: ./client-noauth-application
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8085"
+    environment:
+      - JAVA_OPTS=-Xmx512m
+    command: sh -c "java -jar client-noauth-application.jar & exec sh"
+    networks:
+      - spring-network
+    tty: true
+    stdin_open: true
+
+networks:
+  spring-network:
+    driver: bridge

@@ -8,6 +8,6 @@ spring:
           # The issuer-uri configuration in Spring Boot's security OAuth2 resource server settings specifies the
           # URI of the OpenID Connect Provider (also known as the Authorization Server) that issues the JWT tokens.
           # This is a crucial configuration for JWT validation.
-          issuer-uri: http://localhost:9000
+          issuer-uri: http://authorization-server:9000
 server:
   port: 8082

@@ -60,7 +60,7 @@ spring:
   security:
     oauth2:
       authorizationserver:
-        issuer: http://localhost:9000
+        issuer: http://authorization-server:9000
 ```
 
 ### Configurando o Resource Server
@@ -80,7 +80,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9000
+          issuer-uri: http://authorization-server:9000
 ```
 
 ### Aplicações Cliente
@@ -114,7 +114,7 @@ public class LessonsController {
     @GetMapping("/lessons")
     public String fetchLessons() {
         return restClient.get()
-                .uri("http://localhost:8082/lessons")
+                .uri("http://resource-server:8082/lessons")
                 .attributes(clientRegistrationId("golf-client"))
                 .retrieve()
                 .body(String.class);
@@ -204,6 +204,16 @@ Os aplicativos cliente incluem tratamento abrangente de erros para problemas rel
         "Client error occurred");
 })
 ```
+## Docker (compose)
+
+Na pasta principal do projeto executar:
+docker-compose up -d --build
+
+Para entrar no bash de cada projeto 
+winpty docker exec -it <CONTAINER ID OU CONTAINER NAME> bash
+
+
+
 ## Youtube Video tutorial (original)
 
 https://www.youtube.com/watch?v=nFKcJDpUuZ8

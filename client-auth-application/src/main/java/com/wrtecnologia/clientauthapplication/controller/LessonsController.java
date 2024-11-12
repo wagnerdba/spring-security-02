@@ -27,7 +27,7 @@ public class LessonsController {
     @GetMapping("/lessons")
     public String fetchLessons() {
         return restClient.get()
-                .uri("http://localhost:8082/lessons")
+                .uri("http://resource-server:8082/lessons")
                 .attributes(clientRegistrationId("golf-client"))
                 .retrieve()
                 .body(String.class);

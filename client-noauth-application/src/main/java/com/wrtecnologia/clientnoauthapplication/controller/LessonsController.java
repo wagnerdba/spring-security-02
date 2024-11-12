@@ -16,7 +16,7 @@ public class LessonsController {
 
     public LessonsController(RestClient.Builder builder) {
         this.restClient = builder
-                .baseUrl("http://localhost:8082")
+                .baseUrl("http://resource-server:8082")
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultStatusHandler(HttpStatusCode::is4xxClientError, (request, response) -> {
                     if (response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
@@ -34,7 +34,7 @@ public class LessonsController {
     @GetMapping("/lessons")
     public String fetchLessons() {
         return restClient.get()
-            .uri("http://localhost:8082/lessons")
+            .uri("/lessons")
             .retrieve()
             .body(String.class);
 
