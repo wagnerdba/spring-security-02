@@ -1,4 +1,4 @@
-package com.wrtecnologia.clientnoauthapplication;
+package com.wrtecnologia.clientnoauthapplication.exception;
 
 public class ErrorMessage {
     private String message;
