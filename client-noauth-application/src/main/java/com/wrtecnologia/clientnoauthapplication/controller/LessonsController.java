@@ -37,6 +37,5 @@ public class LessonsController {
             .uri("/lessons")
             .retrieve()
             .body(String.class);
-
     }
 }
