@@ -12,7 +12,7 @@
 	<artifactId>resource-server</artifactId>
 	<version>1.1</version>
 	<name>resource-server</name>
-	<description>resource-server</description>
+	<description>OAuth2 - Resource Server Module</description>
 	<url/>
 	<licenses>
 		<license/>

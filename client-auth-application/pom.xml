@@ -12,7 +12,7 @@
 	<artifactId>client-auth-application</artifactId>
 	<version>1.1</version>
 	<name>client-auth-application</name>
-	<description>client-auth-application</description>
+	<description>OAuth2 - Module With Authentication</description>
 	<url/>
 	<licenses>
 		<license/>

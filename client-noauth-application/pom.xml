@@ -12,7 +12,7 @@
     <artifactId>client-noauth-application</artifactId>
     <version>1.1</version>
     <name>client-noauth-application</name>
-    <description>client-noauth-application</description>
+    <description>OAuth2 - Module Without Authentication</description>
     <url/>
     <licenses>
         <license/>
