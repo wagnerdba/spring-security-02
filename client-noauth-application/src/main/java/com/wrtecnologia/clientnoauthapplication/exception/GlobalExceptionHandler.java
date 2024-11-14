@@ -11,8 +11,6 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    // Mensagens de erro centralizadas
-    //private static final String MESSAGE_NOT_FOUND = "Requested resource not found on Lessons API";
     private static final String MESSAGE_UNAUTHORIZED = "Unauthorized access to Lessons API";
     private static final String MESSAGE_INTERNAL_SERVER_ERROR = "Internal Server Error occurred in Lessons API";
     private static final String MESSAGE_URL_NOT_EXIST = "Requested resource not found on Lessons API";
@@ -35,9 +33,6 @@ public class GlobalExceptionHandler {
     }
 
     private String getCustomErrorMessage(HttpStatusCode statusCode) {
-       /* if (statusCode == HttpStatus.NOT_FOUND) {
-            return MESSAGE_NOT_FOUND;
-        } */
         if (statusCode == HttpStatus.UNAUTHORIZED) {
             return MESSAGE_UNAUTHORIZED;
         } else if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR) {
