@@ -25,21 +25,14 @@ public class LessonsController {
         this.restClient = builder
                 .baseUrl("http://resource-server:8082")
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .defaultStatusHandler(HttpStatusCode::is4xxClientError, (request, response) -> {
-                    if (response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
-                        throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Unauthorized Access to Lessons API");
-                    }
-                    throw new ResponseStatusException(response.getStatusCode(), "Client Error Occurred");
-                })
-                .defaultStatusHandler(HttpStatusCode::is5xxServerError, (request, response) -> {
-                    if (response.getStatusCode() == HttpStatus.INTERNAL_SERVER_ERROR) {
-                        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error occurred in Lessons API");
-                    }
-                    throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,
-                            "Downstream Service Error: " + response.getStatusCode());
+                .defaultStatusHandler(HttpStatusCode::isError, (request, response) -> {
+                    HttpStatusCode statusCode = response.getStatusCode();
+                    throw new ResponseStatusException(statusCode); // Lança a exceção genérica
                 })
                 .build();
     }
+
+
 
     @GetMapping("/lessons")
     public String fetchLessons() {
