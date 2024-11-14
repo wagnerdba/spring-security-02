@@ -14,3 +14,5 @@ spring:
         provider:
           golf-provider:
             token-uri: http://authorization-server:9000/oauth2/token
+api:
+  lessons-url: "http://resource-server:8082/lessons"

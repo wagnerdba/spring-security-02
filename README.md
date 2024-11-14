@@ -109,18 +109,28 @@ Para acessar recursos protegidos:
 ```java
 @RestController
 public class LessonsController {
+
+    @Value("${api.lessons-url}")
+    private String lessonsUrl;
+   
     private final RestClient restClient;
 
     @GetMapping("/lessons")
     public String fetchLessons() {
         return restClient.get()
-                .uri("http://resource-server:8082/lessons")
+                .uri(lessonsUrl)
                 .attributes(clientRegistrationId("golf-client"))
                 .retrieve()
                 .body(String.class);
     }
 }
 ```
+
+Para acessar recursos desprotegidos (Http 401):
+
+http://localhost:8085/lessons
+
+message:"Unauthorized Access to Lessons API."
 
 ## Configuração de segurança
 

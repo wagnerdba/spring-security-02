@@ -3,3 +3,5 @@ spring:
     name: client-noauth-application
 server:
   port: 8085
+#api:
+#  lessons-url: "http://resource-server:8082"

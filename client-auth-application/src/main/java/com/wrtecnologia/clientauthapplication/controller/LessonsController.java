@@ -1,6 +1,7 @@
 package com.wrtecnologia.clientauthapplication.controller;
 
 import com.wrtecnologia.clientauthapplication.dto.TokenResponse;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
@@ -15,6 +16,8 @@ import static org.springframework.security.oauth2.client.web.client.RequestAttri
 @RestController
 public class LessonsController {
 
+    @Value("${api.lessons-url}")
+    private String lessonsUrl;
 
     private final RestClient restClient;
     private final OAuth2AuthorizedClientManager authorizedClientManager;
@@ -27,7 +30,7 @@ public class LessonsController {
     @GetMapping("/lessons")
     public String fetchLessons() {
         return restClient.get()
-                .uri("http://resource-server:8082/lessons")
+                .uri(lessonsUrl)
                 .attributes(clientRegistrationId("golf-client"))
                 .retrieve()
                 .body(String.class);
