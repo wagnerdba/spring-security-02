@@ -32,8 +32,6 @@ public class LessonsController {
                 .build();
     }
 
-
-
     @GetMapping("/lessons")
     public String fetchLessons() {
         return restClient.get()
