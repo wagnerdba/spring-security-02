@@ -23,7 +23,7 @@ public class LessonsController {
 
     public LessonsController(RestClient.Builder builder) {
         this.restClient = builder
-                .baseUrl("http://resource-server:8082") // lessonsUrl
+                .baseUrl("http://resource-server:8082")
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultStatusHandler(HttpStatusCode::is4xxClientError, (request, response) -> {
                     if (response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
@@ -32,6 +32,9 @@ public class LessonsController {
                     throw new ResponseStatusException(response.getStatusCode(), "Client Error Occurred");
                 })
                 .defaultStatusHandler(HttpStatusCode::is5xxServerError, (request, response) -> {
+                    if (response.getStatusCode() == HttpStatus.INTERNAL_SERVER_ERROR) {
+                        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error occurred in Lessons API");
+                    }
                     throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,
                             "Downstream Service Error: " + response.getStatusCode());
                 })

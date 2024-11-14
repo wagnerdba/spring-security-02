@@ -1,6 +1,9 @@
 spring:
   application:
     name: client-noauth-application
+  web:
+    resources:
+      add-mappings: false
 server:
   port: 8085
 #api:
