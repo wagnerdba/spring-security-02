@@ -46,11 +46,9 @@ public class LessonsController {
             Instant refreshTokenExpiresAt = authorizedClient.getRefreshToken() != null ? authorizedClient.getRefreshToken().getExpiresAt() : null;
             String clientRegistrationId = authorizedClient.getClientRegistration().getRegistrationId();
             String tokenType = authorizedClient.getAccessToken().getTokenType().getValue();
-            String clientId = authorizedClient.getClientRegistration().getClientId();
-            String clientSecret = authorizedClient.getClientRegistration().getClientSecret();
-            return new TokenResponse(accessToken, accessTokenExpiresAt, refreshToken, refreshTokenExpiresAt, clientRegistrationId, tokenType, clientId, clientSecret);
+            return new TokenResponse(accessToken, accessTokenExpiresAt, refreshToken, refreshTokenExpiresAt, clientRegistrationId, tokenType);
         } else {
-            return new TokenResponse("Token não disponível", null, null, null, null, null, null, null);
+            return new TokenResponse("Token não disponível", null, null, null, null, null);
         }
     }
 }

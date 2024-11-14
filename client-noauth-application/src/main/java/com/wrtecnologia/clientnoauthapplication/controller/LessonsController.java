@@ -20,13 +20,13 @@ public class LessonsController {
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultStatusHandler(HttpStatusCode::is4xxClientError, (request, response) -> {
                     if (response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
-                        throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Unauthorized access to Lessons API.");
+                        throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Unauthorized Access to Lessons API.");
                     }
-                    throw new ResponseStatusException(response.getStatusCode(), "Client error occurred");
+                    throw new ResponseStatusException(response.getStatusCode(), "Client Error Occurred");
                 })
                 .defaultStatusHandler(HttpStatusCode::is5xxServerError, (request, response) -> {
                     throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,
-                            "Downstream service error: " + response.getStatusCode());
+                            "Downstream Service Error: " + response.getStatusCode());
                 })
                 .build();
     }

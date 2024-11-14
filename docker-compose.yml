@@ -7,9 +7,10 @@ services:
       - "9000:9000"
     environment:
       - JAVA_OPTS=-Xmx512m
+    container_name: authorization-server
     command: sh -c "java -jar authorization-server.jar & exec sh"
-    # mem_limit: 1g  # Limite de memória de 1GB
-    mem_limit: 500m  # Limite de memória do container a 500MB
+    # mem_limit: 1g  # Limite de memoria de 1GB
+    mem_limit: 512m  # Limite de memoria do container a 500MB
     networks:
       - spring-network
     tty: true
@@ -23,9 +24,10 @@ services:
       - "8082:8082"
     environment:
       - JAVA_OPTS=-Xmx512m
+    container_name: resource-server
     command: sh -c "java -jar resource-server.jar & exec sh"
-    # mem_limit: 1g  # Limite de memória de 1GB
-    mem_limit: 500m  # Limite de memória do container a 500MB
+    # mem_limit: 1g  # Limite de memoria de 1GB
+    mem_limit: 512m  # Limite de memoria do container a 500MB
     networks:
       - spring-network
     tty: true
@@ -39,9 +41,10 @@ services:
       - "8080:8080"
     environment:
       - JAVA_OPTS=-Xmx512m
+    container_name: authenticated-client  
     command: sh -c "java -jar client-auth-application.jar & exec sh"
-    # mem_limit: 1g  # Limite de memória de 1GB
-    mem_limit: 500m  # Limite de memória do container a 500MB
+    # mem_limit: 1g  # Limite de memoria de 1GB
+    mem_limit: 512m  # Limite de memoria do container a 500MB
     networks:
       - spring-network
     tty: true
@@ -55,9 +58,10 @@ services:
       - "8085:8085"
     environment:
       - JAVA_OPTS=-Xmx512m
+    container_name: unauthenticated-client  
     command: sh -c "java -jar client-noauth-application.jar & exec sh"
-    # mem_limit: 1g  # Limite de memória de 1GB
-    mem_limit: 500m  # Limite de memória do container a 500MB
+    # mem_limit: 1g  # Limite de memoria de 1GB
+    mem_limit: 512m  # Limite de memoria do container a 500MB
     networks:
       - spring-network
     tty: true

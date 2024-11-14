@@ -1,8 +1,5 @@
 package com.wrtecnologia.clientauthapplication.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 import java.time.Instant;
 
 // @Data
@@ -15,18 +12,14 @@ public class TokenResponse {
     private Instant refreshTokenExpiresAt;
     private String clientRegistrationId;
     private String tokenType;
-    private String clientId;
-    private String clientSecret;
 
-    public TokenResponse(String accessToken, Instant accessTokenExpiresAt, String refreshToken, Instant refreshTokenExpiresAt, String clientRegistrationId, String tokenType, String clientId, String clientSecret) {
+    public TokenResponse(String accessToken, Instant accessTokenExpiresAt, String refreshToken, Instant refreshTokenExpiresAt, String clientRegistrationId, String tokenType) {
         this.accessToken = accessToken;
         this.accessTokenExpiresAt = accessTokenExpiresAt;
         this.refreshToken = refreshToken;
         this.refreshTokenExpiresAt = refreshTokenExpiresAt;
         this.clientRegistrationId = clientRegistrationId;
         this.tokenType = tokenType;
-        this.clientId = clientId;
-        this.clientSecret = clientSecret;
      }
 
     public String getAccessToken() {
@@ -77,19 +70,4 @@ public class TokenResponse {
         this.tokenType = tokenType;
     }
 
-    public String getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getClientSecret() {
-        return clientSecret;
-    }
-
-    public void setClientSecret(String clientSecret) {
-        this.clientSecret = clientSecret;
-    }
 }
