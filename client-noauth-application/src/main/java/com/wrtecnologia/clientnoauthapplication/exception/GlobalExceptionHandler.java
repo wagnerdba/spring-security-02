@@ -10,6 +10,6 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResponseStatusException.class)
     public ResponseEntity<Object> handleResponseStatusException(ResponseStatusException ex) {
-        return new ResponseEntity<>(new ErrorMessage(ex.getReason()), ex.getStatusCode());
+        return new ResponseEntity<>(new ErrorMessage(ex.getStatusCode().toString(), ex.getReason()), ex.getStatusCode());
     }
 }

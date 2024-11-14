@@ -27,7 +27,7 @@ public class LessonsController {
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultStatusHandler(HttpStatusCode::is4xxClientError, (request, response) -> {
                     if (response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
-                        throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Unauthorized Access to Lessons API.");
+                        throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Unauthorized Access to Lessons API");
                     }
                     throw new ResponseStatusException(response.getStatusCode(), "Client Error Occurred");
                 })
