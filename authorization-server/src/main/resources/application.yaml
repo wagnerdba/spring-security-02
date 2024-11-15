@@ -7,3 +7,6 @@ spring:
         issuer: http://authorization-server:9000
 server:
   port: 9000
+api:
+  client-id: "golf-client-3732d774-4c4f-416f-b38e-580be74bc7dd"
+  client-secret: "golf-secret-dc9abad3-c8db-4441-9060-6947b658c0a2"

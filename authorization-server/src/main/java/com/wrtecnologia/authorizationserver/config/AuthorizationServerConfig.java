@@ -1,5 +1,6 @@
 package com.wrtecnologia.authorizationserver.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -19,11 +20,17 @@ import java.util.UUID;
 @Configuration
 public class AuthorizationServerConfig {
 
+    @Value("${api.client-id}")
+    private String clientId;
+
+    @Value("${api.client-secret}")
+    private String clientSecret;
+
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
         RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
-                .clientId("golf-client-3732d774-4c4f-416f-b38e-580be74bc7dd")
-                .clientSecret(passwordEncoder().encode("golf-secret-dc9abad3-c8db-4441-9060-6947b658c0a2"))
+                .clientId(clientId)
+                .clientSecret(passwordEncoder().encode(clientSecret))
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
                 .scope("read")
@@ -41,5 +48,4 @@ public class AuthorizationServerConfig {
         OAuth2AuthorizationServerConfiguration.applyDefaultSecurity(http);
         return http.formLogin(Customizer.withDefaults()).build();
     }
-    
 }
