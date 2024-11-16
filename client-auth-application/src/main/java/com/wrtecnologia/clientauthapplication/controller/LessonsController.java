@@ -15,7 +15,6 @@ import static org.springframework.security.oauth2.client.web.client.RequestAttri
 @RestController
 public class LessonsController {
 
-
     private final RestClient restClient;
     private final OAuth2AuthorizedClientManager authorizedClientManager;
 
