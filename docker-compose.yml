@@ -38,7 +38,7 @@ services:
       context: ./client-auth-application
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "8084:8084"
     environment:
       - JAVA_OPTS=-Xmx512m
     container_name: authenticated-client  
